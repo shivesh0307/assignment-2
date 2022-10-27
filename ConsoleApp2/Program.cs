@@ -11,6 +11,7 @@ namespace ConsoleApp2
     {
        public string name;
         public string country;
+
     }
     class order
     {
@@ -18,11 +19,23 @@ namespace ConsoleApp2
         public string itemName;
         public DateTime date;
         public int quantity;
+        public order(int orderId, string itemName, DateTime orderDate, int quantity)
+        {
+            this.orderId = orderId;
+            this.itemName = itemName;
+            this.date = orderDate;
+            this.quantity = quantity;
+        }
     }
     class item
     { 
         public string itemName;
         public int price;
+        public item(string itemName, int price)
+        {
+            this.itemName = itemName;
+            this.price = price;
+        }
     }
     class Program
     {
@@ -91,7 +104,7 @@ namespace ConsoleApp2
             }
             return list;
         }
-        public void ques5(IEnumerable<order> arr1, IEnumerable<item> arr2)
+        public void ques5and6(IEnumerable<order> arr1, IEnumerable<item> arr2)
         {
             var query = arr1.Join(// outer sequence 
                        arr2,  // inner sequence 
